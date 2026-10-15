@@ -32,6 +32,30 @@ const precoCombustivel = () => {
 }
 
 // 3. Validação dos dados obtidos
-const numeroInvalido = (valor) => valor <= 0;
+const validarValores = (distancia, consumo, preco) => {
+    
+    if( (distancia <= 0) || !Number.isFinite(distancia) ||
+        (consumo <= 0) || !Number.isFinite(consumo) || 
+        (preco <= 0) || !Number.isFinite(preco)) {            
+        return false;
+    }
 
-const valorVazio = (valor) => !Number.isFinite(valor);
+    return true;    
+}
+
+// 4. Funções auxiliares 
+const calculaLitros = (distancia, consumo) => {
+    const litrosConsumidos = distancia / consumo;
+    return litrosConsumidos;
+}
+
+const calculaCusto = (litrosConsumidos, preço) => {
+    const custoViagem = litrosConsumidos * preço;
+    return custoViagem;
+}
+
+const calculaCustoPorKm = (custoTotal, distancia) => {
+    const custoMedio = custoTotal / distancia;
+    return custoMedio;
+}
+
