@@ -35,14 +35,6 @@ Praticar conceitos fundamentais de desenvolvimento front-end, incluindo estrutur
 4. Preencha os três campos e clique em Calcular consumo.
 Substitua URL_DO_SEU_REPOSITORIO pelo endereço real do projeto no GitHub.
 
-📁 Estrutura do projeto
-
-calculadora-combustivel/
-├── index.html
-├── style.css
-├── script.js
-└── README.md
-
 📚 Conceitos praticados
 
 - HTML semântico e formulários.
@@ -55,8 +47,3 @@ calculadora-combustivel/
 - Formatação numérica com toFixed().
 - Organização visual com Flexbox e media queries.
 - Versionamento com Git e GitHub.
-
-👨‍💻 Autor
-
-Rafael Junior
-Estudante de Desenvolvimento Full Stack.
