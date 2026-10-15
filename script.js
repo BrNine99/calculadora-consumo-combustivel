@@ -30,3 +30,8 @@ const consumo = () => {
 const precoCombustivel = () => {
     return parseFloat(obterElemento("preco").value);
 }
+
+// 3. Validação dos dados obtidos
+const numeroInvalido = (valor) => valor <= 0;
+
+const valorVazio = (valor) => !Number.isFinite(valor);
