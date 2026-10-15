@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calcular Consumo de Combustível</title>
+    <title>Calcular Consumo de Combustível</title>    
 </head>
 <body>
     <main>
@@ -39,16 +39,18 @@
                     <input type="number" id="preco" min="0.01" step="any" placeholder="Preço em R$" required>
                 </div> 
                 
-                <button type="submit">Calcular consumo</button>
+                <button type="button" onclick="calcularViagem()">Calcular consumo</button>
             </form>
 
             <div>
                 <p id="combustivelCons">Combustível consumido: 0,00 L</p>
-                <p id="custoViagem">Custo da viagem: R$ 0,00 </p>
+                <p id="custoViagem">Custo da viagem: R$ 0,00</p>
+                <p id="custoMedio">Custo médio por KM: R$ 0,00</p>
             </div>
         </section>
 
     </main>
-    
+
+    <script src="script.js"></script>    
 </body>
 </html>
