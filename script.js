@@ -33,7 +33,7 @@ const precoCombustivel = () => {
 
 // 3. Validação dos dados obtidos
 const validarValores = (distancia, consumo, preco) => {
-    
+
     if( (distancia <= 0) || !Number.isFinite(distancia) ||
         (consumo <= 0) || !Number.isFinite(consumo) || 
         (preco <= 0) || !Number.isFinite(preco)) {            
@@ -59,3 +59,37 @@ const calculaCustoPorKm = (custoTotal, distancia) => {
     return custoMedio;
 }
 
+const limpaCampo = () => {
+    obterElemento("distancia").value = "";
+    obterElemento("consumoMedio").value = "";
+    obterElemento("preco").value = "";
+}
+
+// 4.1 Atualiza Interface
+const exibirResultados = (litrosConsumidos, custoViagem, custoMedio) => {
+    obterElemento("combustivelCons").textContent = `Combustível consumido: ${litrosConsumidos.toFixed(2).replace(".", ",")} L`;
+    obterElemento("custoViagem").textContent = `Custo da viagem: R$ ${custoViagem.toFixed(2).replace(".", ",")}`;
+    obterElemento("custoMedio").textContent = `Custo médio por KM: R$ ${custoMedio.toFixed(2).replace(".", ",")}`;
+}
+
+
+// 5. Função Principal
+function calcularViagem() {
+    
+    const distancia = distanciaPercorrida();
+    const consumoMedio = consumo();
+    const preco = precoCombustivel();
+
+    if (!validarValores(distancia, consumoMedio, preco)) {
+        alert("Valor inválido! Por favor, digite um numero válido.");
+        return;
+    }
+
+    const litrosConsumidos = calculaLitros(distancia, consumoMedio);
+    const custoViagem = calculaCusto(litrosConsumidos, preco);
+    const custoMedio = calculaCustoPorKm(custoViagem, distancia);
+
+    exibirResultados(litrosConsumidos, custoViagem, custoMedio);
+
+    limpaCampo();        
+}
